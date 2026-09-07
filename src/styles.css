@@ -161,7 +161,7 @@ footer { margin-top:auto;padding-top:70px;color:#776b78;font-size:10px;display:f
 }
 .zoom-overlay .close {
   position:fixed; z-index:41; opacity:1;
-  right:16px; top:max(16px, env(safe-area-inset-top));
+  left:16px; right:auto; top:max(16px, env(safe-area-inset-top));
   width:44px; height:44px; display:grid; place-items:center;
   font-size:26px; line-height:1; border-radius:50%;
   background:rgba(20,10,18,.72); border:1px solid rgba(255,255,255,.3);

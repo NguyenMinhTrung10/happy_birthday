@@ -121,29 +121,28 @@ function App() {
 
           <div className="scroll"><ArrowDown size={16} /> kéo xuống để xem thêm</div>
 
-          {zoom && (
-            <div className="zoom-overlay" onClick={() => setZoom(null)}>
-              <button className="close" onClick={() => setZoom(null)} aria-label="Đóng">×</button>
-              <img src={zoom} alt="Ảnh phóng to" onClick={e => e.stopPropagation()} />
-            </div>
-          )}
-
-          {letter && (
-            <div className="letter-overlay" onClick={() => setLetter(false)}>
-              <article className="letter" onClick={e => e.stopPropagation()}>
-                <button className="close" onClick={() => setLetter(false)}>×</button>
-                <div className="envelope-icon">💌</div>
-                <h4>Gửi em,</h4>
-                <p>{wish}</p>
-                <div className="signature">— Người đang thích em ❤️</div>
-              </article>
-            </div>
-          )}
-
           <footer>
             Made with <Heart size={14} fill="currentColor" /> just for you
           </footer>
         </section>
+      )}
+      {zoom && (
+        <div className="zoom-overlay" onClick={() => setZoom(null)}>
+          <button className="close" onClick={() => setZoom(null)} aria-label="Đóng ảnh">×</button>
+          <img src={zoom} alt="Ảnh phóng to" onClick={e => e.stopPropagation()} />
+        </div>
+      )}
+
+      {letter && (
+        <div className="letter-overlay" onClick={() => setLetter(false)}>
+          <article className="letter" onClick={e => e.stopPropagation()}>
+            <button className="close" onClick={() => setLetter(false)} aria-label="Đóng thư">×</button>
+            <div className="envelope-icon">💌</div>
+            <h4>Gửi em,</h4>
+            <p>{wish}</p>
+            <div className="signature">— Người đang thích em ❤️</div>
+          </article>
+        </div>
       )}
     </main>
   );
