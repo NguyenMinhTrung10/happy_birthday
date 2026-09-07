@@ -49,7 +49,7 @@ main { min-height:100vh; min-height:100dvh; position:relative; overflow:hidden; 
 .birthday { justify-content:flex-start;padding-top:13vh; }
 .badge { margin-bottom:15px; }
 .birthday h2 { font-family:'Playfair Display',serif;font-size:clamp(38px,9vw,70px);margin:0;font-weight:600; }
-.birthday h3 { font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(52px,12vw,95px);margin:-5px 0 5px;color:#ff86aa;line-height:1; }
+.birthday h3 { font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(38px,9.5vw,78px);margin:-5px 0 5px;color:#ff86aa;line-height:1; }
 .name-heart { width:.62em; height:.62em; vertical-align:.02em; }
 .lead { color:#cdbdcb;max-width:500px;line-height:1.7;margin:15px auto 25px;font-size:14px; }
 .cake { width:190px;height:160px;position:relative;margin:5px auto 28px; }
@@ -83,7 +83,7 @@ footer { margin-top:auto;padding-top:70px;color:#776b78;font-size:10px;display:f
 @keyframes pop{from{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}} @keyframes fade{from{opacity:0}to{opacity:1}}
 
 @media(max-width:500px){
-  .hero h1{font-size:40px}.gift-wrap{height:230px}.birthday{padding-top:11vh}.birthday h2{font-size:42px}.birthday h3{font-size:61px}.cake{transform:scale(.88);margin-bottom:10px}.scroll{margin-top:50px}
+  .hero h1{font-size:40px}.gift-wrap{height:230px}.birthday{padding-top:11vh}.birthday h2{font-size:42px}.cake{transform:scale(.88);margin-bottom:10px}.scroll{margin-top:50px}
 }
 
 

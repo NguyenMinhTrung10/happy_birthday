@@ -85,7 +85,7 @@ function App() {
         <section className="birthday">
           <div className="badge"><Sparkles size={16} /> TODAY IS YOUR DAY <Sparkles size={16} /></div>
           <h2>Happy Birthday,</h2>
-          <h3>Em <Heart className="name-heart" fill="currentColor" strokeWidth={0} /></h3>
+          <h3>Em <Heart className="name-heart" fill="currentColor" strokeWidth={0} /> (Lily)</h3>
           <p className="lead">Chúc mừng sinh nhật cô gái đặc biệt nhất hôm nay.</p>
 
           <div className="photo-card">
