@@ -159,7 +159,15 @@ footer { margin-top:auto;padding-top:70px;color:#776b78;font-size:10px;display:f
   border-radius:18px; box-shadow:0 30px 80px rgba(0,0,0,.6);
   cursor:default; animation:pop .3s ease;
 }
-.zoom-overlay .close { position:fixed; right:18px; top:10px; z-index:41; }
+.zoom-overlay .close {
+  position:fixed; z-index:41; opacity:1;
+  right:16px; top:max(16px, env(safe-area-inset-top));
+  width:44px; height:44px; display:grid; place-items:center;
+  font-size:26px; line-height:1; border-radius:50%;
+  background:rgba(20,10,18,.72); border:1px solid rgba(255,255,255,.3);
+  backdrop-filter:blur(10px); transition:background .2s, transform .2s;
+}
+.zoom-overlay .close:hover { background:rgba(255,71,127,.85); transform:scale(1.08); }
 
 @media(max-width:500px){
   .gallery { gap:14px 12px; }
