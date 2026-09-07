@@ -8,7 +8,7 @@ body {
   background: radial-gradient(circle at 50% 10%, #3a1631 0%, #160d20 42%, #090711 100%);
 }
 button { font:inherit; }
-main { min-height:100vh; position:relative; overflow:hidden; }
+main { min-height:100vh; min-height:100dvh; position:relative; overflow:hidden; }
 .ambient { position:absolute; border-radius:50%; filter:blur(70px); opacity:.32; pointer-events:none; }
 .a1 { width:340px;height:340px;background:#ff4f86;left:-150px;top:10%; }
 .a2 { width:300px;height:300px;background:#9b5cff;right:-130px;bottom:8%; }
@@ -19,7 +19,7 @@ main { min-height:100vh; position:relative; overflow:hidden; }
   background:rgba(255,255,255,.08); backdrop-filter:blur(12px); cursor:pointer;
 }
 
-.hero,.birthday { min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:45px 20px; position:relative; z-index:2; }
+.hero,.birthday { min-height:100vh; min-height:100dvh; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:45px 20px; position:relative; z-index:2; }
 .tiny,.badge { display:flex;align-items:center;gap:8px;color:#ffc2d5;font-size:11px;letter-spacing:2px;text-transform:uppercase; }
 .hero h1 { font-family:'Playfair Display',serif;font-size:clamp(38px,8vw,72px);line-height:1.08;margin:10px 0 8px; }
 .hero h1 em { color:#ff8eb0; }
@@ -128,15 +128,15 @@ footer { margin-top:auto;padding-top:70px;color:#776b78;font-size:10px;display:f
 .photo-frame, .mini-photo, .polaroid { cursor:zoom-in; }
 
 .gallery {
-  display:grid; grid-template-columns:repeat(2,max-content); justify-content:center;
-  gap:20px 18px; margin:6px auto 30px;
+  display:grid; grid-template-columns:repeat(2,1fr);
+  gap:20px 16px; margin:6px auto 30px; width:min(88vw,430px);
 }
 .polaroid {
   margin:0; padding:8px 8px 0; background:#fff; border-radius:14px;
   box-shadow:0 20px 45px rgba(0,0,0,.4); transition:transform .3s, box-shadow .3s;
 }
 .polaroid img {
-  display:block; width:170px; height:225px; object-fit:cover;
+  display:block; width:100%; height:auto; aspect-ratio:3/4; object-fit:cover;
   border-radius:9px; background:#2a1626;
 }
 .polaroid figcaption {
@@ -162,6 +162,6 @@ footer { margin-top:auto;padding-top:70px;color:#776b78;font-size:10px;display:f
 .zoom-overlay .close { position:fixed; right:18px; top:10px; z-index:41; }
 
 @media(max-width:500px){
-  .gallery { gap:12px; }
-  .polaroid img { width:135px; height:180px; }
+  .gallery { gap:14px 12px; }
+  .polaroid figcaption { padding:6px 2px 8px; }
 }
