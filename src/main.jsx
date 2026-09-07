@@ -20,7 +20,7 @@ Anh không biết món quà này có đủ đặc biệt không, nhưng anh đã
 Hy vọng hôm nay của em thật đẹp — và những ngày sau cũng vậy. ❤️`;
 
 function Hearts() {
-  const items = useMemo(() => Array.from({ length: 22 }, () => ({
+  const items = useMemo(() => Array.from({ length: window.innerWidth >= 900 ? 42 : 22 }, () => ({
     '--left': `${Math.random() * 100}%`,
     '--delay': `${Math.random() * 8}s`,
     '--duration': `${6 + Math.random() * 6}s`,
@@ -29,6 +29,22 @@ function Hearts() {
   return <div className="hearts">{items.map((x, i) => <Heart key={i} style={x} fill="currentColor" />)}</div>;
 }
 
+
+function Bokeh() {
+  const dots = useMemo(() => Array.from({ length: 20 }, () => ({
+    '--left': `${Math.random() * 100}%`,
+    '--top': `${Math.random() * 100}%`,
+    '--size': `${40 + Math.random() * 130}px`,
+    '--blur': `${18 + Math.random() * 26}px`,
+    '--op': (0.05 + Math.random() * 0.09).toFixed(3),
+    '--dx': `${-40 + Math.random() * 80}px`,
+    '--dy': `${-60 - Math.random() * 60}px`,
+    '--duration': `${14 + Math.random() * 14}s`,
+    '--delay': `${-Math.random() * 14}s`,
+    '--tint': Math.random() < 0.5 ? '#ff7fa8' : '#a77bff',
+  })), []);
+  return <div className="bokeh" aria-hidden="true">{dots.map((x, i) => <span key={i} style={x} />)}</div>;
+}
 
 function Confetti({ active }) {
   const pieces = useMemo(() => Array.from({ length: 90 }, () => ({
@@ -56,6 +72,9 @@ function App() {
     <main>
       <div className="ambient a1" />
       <div className="ambient a2" />
+      <div className="ambient a3" />
+      <div className="ambient a4" />
+      <Bokeh />
       <Hearts />
       <Confetti active={opened} />
       <Fireworks active={opened} />
